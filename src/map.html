@@ -29,7 +29,7 @@
         //List to use for creating points on map and dropdown dynamically
         const stationList = [
             {name:'Darwin', id:'14015', lat:'-12.42', lon:'130.89', state:'NT'},
-            {name:'Katherine', id:'14932', lat:'-14.47', lon:'312.28', state:'NT'},
+            {name:'Katherine', id:'14932', lat:'-14.47', lon:'132.28', state:'NT'},
             {name:'Dunmarra', id:'14626', lat:'-16.68', lon:'133.41', state:'NT'},
             {name:'Tennant Creek', id:'15135', lat:'-19.65', lon:'134.19', state:'NT'},
             {name:'Barrow Creek', id:'15502', lat:'-21.52', lon:'133.88', state:'NT'},
@@ -111,6 +111,8 @@
                             document.getElementById("stationNo").innerHTML = "Station No: " + id;
                             document.getElementById("stationNo").style.color = "white";
                             document.getElementById("stationNo").style.fontSize = "x-large"
+
+                            document.getElementById("sel").value = id;
                         }
                     </script>
                    
@@ -143,6 +145,7 @@
                                 x.add(option, x[i+1]);
                                 i++
                             }
+                            
                     </script>
 
                     <div class="col-md-12 text-center">
