@@ -1,3 +1,14 @@
+.sidebar-nav {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background: rgb(82, 79, 79);
+    width: 130px;
+    height: 100%;
+    text-align: center;
+}
+
 body {
     background: #000;
 }
@@ -226,7 +237,7 @@ body {
     position: fixed;
     z-index: 100;
     top: 0;
-    left: 0;
+    left: 130px;
     padding: 50px 0 20px 0;
     width: 100%;
     background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
@@ -245,11 +256,11 @@ body {
 
 .location-outer .burw {
     background: #3E3E3E;
-    border: 2px solid #707070;
+    border: 2px solid white;
     padding: 10px;
     width: 80%;
     margin: 0 auto;
-    border-radius: 30px;
+    border-radius: 0px;
     font-size: 26px;
     line-height: 33px;
 }
@@ -268,11 +279,11 @@ body {
 
 .date-outer .trends {
     background: #3E3E3E;
-    border: 1px solid #707070;
+    border: 1px solid white;
     padding: 2px 20px 7px;
-    width: 50%;
-    margin: 0;
-    border-radius: 30px;
+    width: 40%;
+    margin: auto;
+    border-radius: 0px;
     font-size: 26px;
     color: #fff;
     text-align: center;
@@ -395,7 +406,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .div-border {
     border: 2px solid white;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     background-color: rgb(82, 79, 79);
     width: 100%;
     height: 350px;
@@ -413,8 +424,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
     margin-left: 25%;
     */
     height: 10%;
-    border: 2px solid rgb(95, 91, 91);
-    border-radius: 10px;
+    border: 2px solid #ffffff;
+    /*border-radius: 10px;*/
     background-color: rgb(82, 79, 79);
     margin-top: 10px;
     color: white;
@@ -513,11 +524,4 @@ td {
 #carouselGraphs {
     margin-top: 60px;
     margin-bottom: 60px;
-}
-
-.sidebar-nav {
-    position: fixed;
-    background: rgb(82, 79, 79);
-    width: 130px;
-    height: 100%;
 }

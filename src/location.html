@@ -12,18 +12,34 @@
 
 <body id="backgroundColor">
     <div id="loading" class="hide-loading"></div>
+    <div class="sidebar-nav">
+        <table height=100% width="130px">
+            <tr>
+                <td height="140px">
+                    <!--PredictApp Logo-->
+                    <img class="img-button" src="./img/logo.png" />
+                    <span class="text-white d-block ft-20">Predict App</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--Location Button-->
+                    <img class="img-button" src="img/location.png" />
+                    <span class="text-white d-block ft-20">Location</span>
+                </td>
+            </tr>
+            <tr>
+                <td height="140px">
+                    <!--LogOut-->
+                    <span class="text-white d-block ft-20">Log Out</span>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="h100vh d-flex align-self-center speed">
         <div class="container text-center">
             <div class="location-header fixed">
                 <div class="row container header-title">
-                    <div class="col-md-3">
-                        <img class="img-location-mark" src="img/location.png" />
-                        <span class="text-white d-block ft-20">Location</span>
-
-                        <!-- <img class="img-fluid mt-5" src="img/speednew.png" />
-                        <span class="text-white d-block ft-20">Speed</span> -->
-
-                    </div>
 
                     <div class="col-md-9">
                         <div class="location-outer">
@@ -32,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="row location-select-date">
                 <div class="col-md-8 offset-md-2">
@@ -161,6 +177,7 @@
                     </div>
                     <div class="d-flex date-outer mt-3 mb-3">
                         <button class="btn btn-primary trends d-block date-time1">Show Trends</button>
+                        <button class="btn btn-primary trends d-block date-time1">Speed Strategy</button>
                     </div>
                 </div>
             </div>
@@ -214,7 +231,7 @@
                     </table>
                 </div>
             </div>
-            <div id="carouselGraphs" class="carousel slide align-items-center" data-ride="carousel"> 
+            <div id="carouselGraphs" class="carousel slide align-items-center" data-ride="carousel">
                 <div id="location-graph" class="carousel-inner" role="listbox">
                 </div>
                 <a class="carousel-control-prev" href="#carouselGraphs" role="button" data-slide="prev">
@@ -256,23 +273,23 @@
                 }
                 service.post("get-location", sel_data, function(data) {
                     $("#loading").addClass("hide-loading");
-                        if (!data.status) {
-                            alert("Airtable connection error.");
-                            return;
-                        }
-                        $("#max_temp").text(data.data.Max_Temp);
-                        $("#min_temp").text(data.data.Min_Temp);
-                        $("#avg_temp").text(data.data.Avg_Temp);
-                        $("#wind_dir_am").text(data.data["6am_Wind_Dir"]);
-                        $("#wind_dir_pm").text(data.data["6pm_Wind_Dir"]);
-                        $("#wind_speed_am").text(data.data["6am_Wind_Speed"]);
-                        $("#wind_speed_pm").text(data.data["6pm_Wind_Speed"]);
-                        $("#sun_int").text(data.data["Solar_MJm2"]);
-                        $("#rain_mm").text(data.data["Rain_mm"]);
-                        makeGraph();
-                }, function (errMsg) {
+                    if (!data.status) {
+                        alert("Airtable connection error.");
+                        return;
+                    }
+                    $("#max_temp").text(data.data.Max_Temp);
+                    $("#min_temp").text(data.data.Min_Temp);
+                    $("#avg_temp").text(data.data.Avg_Temp);
+                    $("#wind_dir_am").text(data.data["6am_Wind_Dir"]);
+                    $("#wind_dir_pm").text(data.data["6pm_Wind_Dir"]);
+                    $("#wind_speed_am").text(data.data["6am_Wind_Speed"]);
+                    $("#wind_speed_pm").text(data.data["6pm_Wind_Speed"]);
+                    $("#sun_int").text(data.data["Solar_MJm2"]);
+                    $("#rain_mm").text(data.data["Rain_mm"]);
+                    makeGraph();
+                }, function(errMsg) {
                     $("#loading").addClass("hide-loading");
-                        alert(errMsg);
+                    alert(errMsg);
                 });
             });
 
@@ -316,7 +333,7 @@
                 if (index == 0) {
                     isActive = "active";
                 }
-                graphImages += "<div class=\"carousel-item " + isActive + "\"><img class=\"d-block mx-auto img-fluid\" src=\"files/graph/"+ selSprint + "/" + item + "/"+ stationName +"_"+ stationCode +"_" + graphYear + "."+ imgType + "\" alt=\"A" + (index+1) + "\"></div>";
+                graphImages += "<div class=\"carousel-item " + isActive + "\"><img class=\"d-block mx-auto img-fluid\" src=\"files/graph/" + selSprint + "/" + item + "/" + stationName + "_" + stationCode + "_" + graphYear + "." + imgType + "\" alt=\"A" + (index + 1) + "\"></div>";
             });
             $("#location-graph").html(graphImages);
         }
