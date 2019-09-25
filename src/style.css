@@ -277,7 +277,7 @@ body {
     text-align: center;
 }
 
-.date-outer .trends {
+.date-outer .trends, .speed-strategy {
     background: #3E3E3E;
     border: 1px solid white;
     padding: 2px 20px 7px;
@@ -524,4 +524,8 @@ td {
 #carouselGraphs {
     margin-top: 60px;
     margin-bottom: 60px;
+}
+
+.logout-mark, .img-predict-mark, .img-location-mark, .img-sunny-mark {
+    cursor: pointer;
 }

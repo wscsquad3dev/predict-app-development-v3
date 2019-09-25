@@ -16,25 +16,36 @@
             <tr>
                 <td height="140px">
                     <!--PredictApp Logo-->
-                    <img class="img-button" src="./img/logo.png" />
-                    <span class="text-white d-block ft-20">Predict App</span>
+                    <div class="img-predict-mark">
+                        <img class="img-button" src="./img/logo.png" />
+                        <span class="text-white d-block ft-20">Predict App</span>
+                    </div>
+
                 </td>
             </tr>
             <tr>
                 <td>
                     <!--Location Button-->
-                    <img class="img-button" src="img/location.png" />
-                    <span class="text-white d-block ft-20">Location</span>
+                    <div class="img-location-mark">
+                        <img class="img-button" src="img/location.png" />
+                        <span class="text-white d-block ft-20">Location</span>
+                    </div>
 
                     <br>
-
-                    <!--Weather Button-->
-                    <img class="img-button" src="img/sunny.png" />
-                    <span class="text-white d-block ft-20">Weather</span>
                 </td>
             </tr>
             <tr>
-                <td height="140px">
+                <td>    
+                    <!--Weather Button-->
+                    <div class="img-sunny-mark">
+                        <img class="img-button" src="img/sunny.png" />
+                        <span class="text-white d-block ft-20">Weather</span>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td height="140px" class="logout-mark">
                     <!--LogOut-->
                     <span class="text-white d-block ft-20">Log Out</span>
                 </td>
@@ -52,7 +63,13 @@
             <td class="station-box" colspan=2 width=70%>
                 <!--Station Name & No Box-->
                 <div class="station-no">
-                    <h3> STATION NAME <span class="alignright"> STATION NO</span></h3>
+                    <h3> 
+                        STATION NAME: &nbsp; 
+                        <span id="st-name"></span>
+                        <span class="alignright"> STATION NO: &nbsp; 
+                            <span id="st-no"></span>
+                        </span>
+                    </h3>
                 </div>
             </td>
             <td rowspan=3 width=15%>
@@ -87,6 +104,27 @@
     <script src="js/jquery-3.2.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/icon-event.js"></script>
+    <script>
+        var setStation = function() {
+            var stationName = sessionStorage.getItem("stname");
+            var stationCode = sessionStorage.getItem("stcode")
+            if (!stationName) {
+                stationName = "Adelaide";
+            }
+            if (!stationCode) {
+                stationCode = "23000";
+            }
+
+            $("#st-name").text(stationName);
+            $("#st-no").text(stationCode);
+        }
+        $(document).ready(function() {
+            clickIcons();
+            setStation();
+        });
+    </script>
 </body>
 
 </html>

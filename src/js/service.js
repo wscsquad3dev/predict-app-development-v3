@@ -21,7 +21,6 @@ var service = (function() {
         },
 
         post: function(url, data, _successCallback, _failCallback) {
-            debugger;
             $.ajax({
                 type: "POST",
                 url: SERVER_PATH + url,

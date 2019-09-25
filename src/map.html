@@ -107,15 +107,17 @@
             <tr>
                 <td height="140px">
                     <!--PredictApp Logo-->
-                    <img class="img-button" src="./img/logo.png" />
-                    <span class="text-white d-block ft-20">Predict App</span>
+                    <div class="img-predict-mark">
+                        <img class="img-button" src="./img/logo.png" />
+                        <span class="text-white d-block ft-20">Predict App</span>
+                    </div>
                 </td>
             </tr>
             <tr>
                 <td></td>
             </tr>
             <tr>
-                <td height="100px">
+                <td height="100px" class="logout-mark">
                     <!--LogOut-->
                     <span class="text-white d-block ft-20">Log Out</span>
                 </td>
@@ -267,6 +269,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/service.js"></script>
+    <script src="js/icon-event.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -279,6 +282,7 @@
                 sessionStorage.setItem("stcode", $("#sel option:selected").val());
                 window.location.href = SERVER_PATH + "location.html";
             }
+            clickIcons();
         });
     </script>
 
